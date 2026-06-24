@@ -29,13 +29,15 @@ function filtered() {
 function render() {
   const grid = document.getElementById('grid');
   const items = filtered();
+  
   grid.innerHTML = items.map(p => {
     const save = p.was ? Math.round((1 - p.price / p.was) * 100) : 0;
+    
     return `<div class="product-card">
       <div class="product-img">
         <img src="${p.img}" alt="${p.name}" loading="lazy"/>
         ${p.isNew ? '<span class="product-pill pill-new">New</span>' : ''}
-        ${p.was ? `<span class="product-pill pill-sale" style="top:${p.isNew ? '40px' : '12px'}">${save}% off</span>` : ''}
+        ${p.was ? `<span class="product-pill pill-sale">${save}% OFF</span>` : ''}
       </div>
       <div class="product-body">
         <div>
@@ -51,7 +53,8 @@ function render() {
         </div>
       </div>
     </div>`;
-  }).join('');
+  }).join(''); // Added .join('') to prevent accidental commas between your HTML cards
+
   
   grid.querySelectorAll('.btn-add').forEach(b => b.addEventListener('click', () => addCart(+b.dataset.id)));
 }
