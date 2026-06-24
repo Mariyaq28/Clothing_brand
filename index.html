@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>MQ Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#new">New Arrivals</a>
+    <a href="#shop">Women</a>
+    <a href="#shop">Men</a>
+    <a href="#shop">Accessories</a>
+    <a href="#about">About</a>
+  </div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="#">
+        <span class="mq">MQ</span> <span class="collective">Collective</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#new">New In</a></li>
+          <li><a href="#shop">Women</a></li>
+          <li><a href="#shop">Men</a></li>
+          <li><a href="#shop">Accessories</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        
+        <div class="cart-wrap">
+          <button class="icon-btn" id="cartBtn" aria-label="Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </button>
+          <span class="cart-badge" id="cartCount">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="new">
+    <div>
+      <div class="hero-eyebrow">MQ '25 Collection</div>
+      <h1>Crafted for those who <em>choose</em> with intention.</h1>
+      <p class="hero-sub">Small-batch, ethically made garments. OEKO-TEX® certified fabrics. Free shipping on orders above PKR 5,000 across Pakistan.</p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-dark">Shop New In →</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=900&auto=format&fit=crop" alt="MQ Collective hero look"/>
+      </div>
+      <div class="hero-tag">
+        <div>
+          <div class="hero-tag-label">Featured piece</div>
+          <div class="hero-tag-name">Classic Trench Coat</div>
+        </div>
+        <div class="hero-tag-price">PKR 8,999</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    <h2>New drop — <em>The Quiet Luxe</em> edit is live.</h2>
+    <p>Refined basics and statement layers, designed in Karachi.</p>
+    <a href="#shop" class="btn btn-dark-outline">Explore the Edit →</a>
+  </div>
+
+  <section class="section" id="shop">
+    <div class="section-head">
+      <h2 class="section-title">All Pieces</h2>
+      <a href="#" class="section-link">View all →</a>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips" id="chips">
+        <button class="chip active" data-cat="all">All</button>
+        <button class="chip" data-cat="women">Women</button>
+        <button class="chip" data-cat="men">Men</button>
+        <button class="chip" data-cat="accessories">Accessories</button>
+      </div>
+      <div class="toolbar-right">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search…" aria-label="Search"/>
+          <button id="searchBtn">Go</button>
+        </div>
+        <select id="sortSel" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="new">Newest</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="section">
+    <div class="newsletter">
+      <div>
+        <h2>Stay in the loop.<br><em>No noise.</em></h2>
+        <p>Private drops, sale alerts, and styling notes — curated for you.</p>
+      </div>
+      <div>
+        <form class="newsletter-form" id="nlForm">
+          <input type="email" id="nlEmail" placeholder="your@email.com" required aria-label="Email address"/>
+          <button type="submit" class="btn btn-dark">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="max-width:1200px;margin:0 auto;padding:0 24px 80px">
+    <div style="max-width:600px">
+      <div class="hero-eyebrow">Our Story</div>
+      <h2 class="section-title" style="font-size:2rem;margin-bottom:16px">Made in Karachi.<br>Worn everywhere.</h2>
+      <p style="color:var(--text-muted);font-size:1.05rem;line-height:1.8">MQ Collective is an independent brand designing small-batch, ethically made garments. Our fabrics are OEKO-TEX® certified and all packaging is 100% recyclable. We believe in slow fashion — pieces worth keeping.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <div class="brand foot-brand">
+          <span class="mq">MQ</span> <span class="collective">Collective</span>
+        </div>
+        <p style="font-size:.9rem;margin-bottom:12px;margin-top:8px">Made in Karachi — shipping nationwide.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">Women</a>
+        <a href="#shop">Men</a>
+        <a href="#shop">Accessories</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Size Guide</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> MQ Collective. All rights reserved.</span>
+      <span>Karachi, Pakistan 🇵🇰</span>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="icon-btn-close" id="cartClose" aria-label="Close">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span class="cart-total-price" id="cartTotal">PKR 0</span>
+      </div>
+      <button class="btn btn-dark" style="width:100%;justify-content:center">Checkout →</button>
+      <p style="color:var(--text-muted);font-size:.82rem;margin-top:10px;text-align:center">Shipping calculated at checkout.</p>
+    </div>
+  </aside>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
