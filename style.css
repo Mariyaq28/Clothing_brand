@@ -297,19 +297,24 @@ footer a:hover { color: var(--gold); }
   font-size: .9rem; flex-wrap: wrap; gap: 12px;
 }
 
+
 /* ── CART DRAWER ── */
 .overlay {
   position: fixed; inset: 0; background: rgba(14,24,41,.6); backdrop-filter: blur(4px);
   z-index: 150; opacity: 0; pointer-events: none; transition: opacity .3s ease;
 }
 .overlay.open { opacity: 1; pointer-events: all; }
+
 .cart-drawer {
-  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100vw);
+  position: fixed; top: 0; right: 0; bottom: 0; 
+  width: min(420px, 85vw); /* Changed from 100vw to 85vw so it doesn't take up the full screen on mobile */
   background: var(--bg-drawer); z-index: 200;
   transform: translateX(110%); transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
   display: flex; flex-direction: column; box-shadow: -8px 0 40px rgba(0,0,0,.2);
 }
 .cart-drawer.open { transform: translateX(0); }
+
+
 .cart-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 24px; border-bottom: 1px solid var(--border-color);
