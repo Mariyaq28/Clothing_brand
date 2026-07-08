@@ -42,11 +42,12 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        
-        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-        
+
+        <!-- aria-expanded added for screen reader support -->
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileNav">☰</button>
+
         <div class="cart-wrap">
-          <button class="icon-btn" id="cartBtn" aria-label="Cart">
+          <button class="icon-btn" id="cartBtn" aria-label="Open cart">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
           </button>
           <span class="cart-badge" id="cartCount">0</span>
@@ -70,13 +71,14 @@
         <div class="hero-img-wrap">
           <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=900&auto=format&fit=crop" alt="MQ Collective hero look"/>
         </div>
-        <div class="hero-tag">
+        <!-- Hero tag now links to the shop section -->
+        <a href="#shop" class="hero-tag" aria-label="Shop Classic Trench Coat — PKR 8,999">
           <div>
             <div class="hero-tag-label">Featured piece</div>
             <div class="hero-tag-name">Classic Trench Coat</div>
           </div>
-          <div class="hero-tag-price">PKR 8,999</div>
-        </div>
+          <div class="hero-tag-price">PKR 8,999 →</div>
+        </a>
       </div>
     </section>
 
@@ -112,6 +114,9 @@
           </select>
         </div>
       </div>
+
+      <!-- Product count display -->
+      <p class="product-count" id="productCount"></p>
 
       <div class="grid" id="grid"></div>
     </section>
@@ -195,10 +200,15 @@
       <span class="mobile-cta-label">Your Cart</span>
       <span class="mobile-cta-count" id="mobileCtaCount">0 items</span>
     </div>
-    <button class="mobile-cta-btn" id="mobileCtaBtn">
-      View Cart →
-    </button>
+    <button class="mobile-cta-btn" id="mobileCtaBtn">View Cart →</button>
   </div>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <!-- Toast notification container -->
   <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="false"></div>

@@ -431,8 +431,17 @@ footer a:focus-visible { outline: none; color: var(--gold); }
   transition: background 0.3s;
 }
 .cart-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; display: block; }
-.cart-item-name { font-weight: 600; font-size: .95rem; color: var(--text-main); margin-bottom: 4px; }
-.cart-item-price { font-size: .9rem; color: var(--text-muted); font-weight: 500;}
+.cart-item-name { font-weight: 600; font-size: .95rem; color: var(--text-main); margin-bottom: 2px; }
+.cart-item-size { font-size: .8rem; color: var(--gold); font-weight: 600; letter-spacing: .3px; margin-bottom: 3px; text-transform: uppercase; }
+.cart-item-price { font-size: .9rem; color: var(--text-muted); font-weight: 500; }
+.cart-remove-btn {
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  padding: 6px; font-size: 1.4rem; align-self: start; line-height: 1;
+  transition: color .2s ease, transform .2s ease;
+  border-radius: 50%; width: 32px; height: 32px; display: grid; place-items: center;
+}
+.cart-remove-btn:hover { color: var(--danger); transform: scale(1.15); }
+.cart-remove-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 .qty-control { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
 .qty-btn {
   width: 44px; height: 44px; border-radius: 50%;
@@ -518,6 +527,76 @@ footer a:focus-visible { outline: none; color: var(--gold); }
   to   { opacity: 0; transform: translateY(8px) scale(0.95); }
 }
 
+/* ── SIZE SELECTOR ── */
+.size-selector { margin-bottom: 14px; }
+.size-label {
+  display: block; font-size: .7rem; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+}
+.size-options { display: flex; gap: 6px; flex-wrap: wrap; }
+.size-btn {
+  padding: 5px 10px; border-radius: 6px; font-size: .78rem; font-weight: 600;
+  border: 1.5px solid var(--border-color); background: transparent;
+  color: var(--text-muted); cursor: pointer;
+  transition: all .18s ease, transform .18s ease;
+  min-height: 32px; min-width: 36px;
+}
+.size-btn:hover { border-color: var(--text-main); color: var(--text-main); transform: translateY(-1px); }
+.size-btn.selected {
+  background: var(--text-main); color: var(--bg-body);
+  border-color: var(--text-main);
+}
+[data-theme="dark"] .size-btn.selected { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+.size-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* Shake animation for size selector when none selected */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.size-options.shake { animation: shake .5s ease; }
+.btn-add.no-size { background: var(--danger) !important; color: #fff !important; }
+
+/* ── PRODUCT COUNT LABEL ── */
+.product-count {
+  font-size: .82rem; color: var(--text-muted); font-weight: 500;
+  margin-bottom: 20px; letter-spacing: .2px;
+}
+
+/* ── SCROLL-TRIGGERED CARD ANIMATIONS ── */
+.animate-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.animate-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+  position: fixed; bottom: 32px; right: 24px; z-index: 110;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--navy-deep); color: #fff;
+  border: none; cursor: pointer; display: grid; place-items: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: opacity .3s ease, transform .3s ease, background .2s ease, box-shadow .2s ease;
+  opacity: 0; pointer-events: none; transform: translateY(12px);
+}
+[data-theme="dark"] .back-to-top { background: var(--gold); color: var(--navy-deep); }
+.back-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+.back-to-top:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* Hero tag as clickable link ── */
+.hero-tag { cursor: pointer; text-decoration: none; }
+.hero-tag:hover { box-shadow: 0 8px 32px rgba(26,39,68,.2); transform: translateY(-2px); }
+.hero-tag:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
@@ -601,4 +680,7 @@ footer a:focus-visible { outline: none; color: var(--gold); }
   .product-body { padding: 10px; }
   .btn-add { font-size: .78rem; }
   .btn-wish { width: 38px; height: 38px; font-size: 1rem; }
+  .size-btn { font-size: .72rem; padding: 4px 8px; min-width: 30px; }
+  /* On mobile, back-to-top sits above the sticky CTA bar */
+  .back-to-top { bottom: 90px; right: 16px; width: 42px; height: 42px; }
 }
