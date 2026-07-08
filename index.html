@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>MQ Collective</title>
+  <meta name="description" content="MQ Collective — Small-batch, ethically made garments designed in Karachi. OEKO-TEX® certified fabrics. Shop women, men, and accessories. Free shipping on orders above PKR 5,000."/>
+  <title>MQ Collective — Quiet Luxe, Made in Karachi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
       <a class="brand" href="#">
         <span class="mq">MQ</span> <span class="collective">Collective</span>
       </a>
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul>
           <li><a href="#new">New In</a></li>
           <li><a href="#shop">Women</a></li>
@@ -54,88 +55,90 @@
     </div>
   </header>
 
-  <section class="hero" id="new">
-    <div>
-      <div class="hero-eyebrow">MQ '25 Collection</div>
-      <h1>Crafted for those who <em>choose</em> with intention.</h1>
-      <p class="hero-sub">Small-batch, ethically made garments. OEKO-TEX® certified fabrics. Free shipping on orders above PKR 5,000 across Pakistan.</p>
-      <div class="hero-cta">
-        <a href="#shop" class="btn btn-dark">Shop New In →</a>
-        <a href="#about" class="btn btn-outline">Our Story</a>
+  <main>
+    <section class="hero" id="new">
+      <div>
+        <div class="hero-eyebrow">MQ '25 Collection</div>
+        <h1>Crafted for those who <em>choose</em> with intention.</h1>
+        <p class="hero-sub">Small-batch, ethically made garments. OEKO-TEX® certified fabrics. Free shipping on orders above PKR 5,000 across Pakistan.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-dark">Shop New In →</a>
+          <a href="#about" class="btn btn-outline">Our Story</a>
+        </div>
       </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=900&auto=format&fit=crop" alt="MQ Collective hero look"/>
+        </div>
+        <div class="hero-tag">
+          <div>
+            <div class="hero-tag-label">Featured piece</div>
+            <div class="hero-tag-name">Classic Trench Coat</div>
+          </div>
+          <div class="hero-tag-price">PKR 8,999</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="banner">
+      <h2>New drop — <em>The Quiet Luxe</em> edit is live.</h2>
+      <p>Refined basics and statement layers, designed in Karachi.</p>
+      <a href="#shop" class="btn btn-dark-outline">Explore the Edit →</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-img-wrap">
-        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=900&auto=format&fit=crop" alt="MQ Collective hero look"/>
+
+    <section class="section" id="shop">
+      <div class="section-head">
+        <h2 class="section-title">All Pieces</h2>
+        <a href="#" class="section-link">View all →</a>
       </div>
-      <div class="hero-tag">
+
+      <div class="toolbar">
+        <div class="chips" id="chips">
+          <button class="chip active" data-cat="all">All</button>
+          <button class="chip" data-cat="women">Women</button>
+          <button class="chip" data-cat="men">Men</button>
+          <button class="chip" data-cat="accessories">Accessories</button>
+        </div>
+        <div class="toolbar-right">
+          <div class="search-wrap">
+            <input id="searchInput" type="search" placeholder="Search…" aria-label="Search products"/>
+            <button id="searchBtn" aria-label="Search">Go</button>
+          </div>
+          <select id="sortSel" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-desc">Price ↓</option>
+            <option value="new">Newest</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="newsletter">
         <div>
-          <div class="hero-tag-label">Featured piece</div>
-          <div class="hero-tag-name">Classic Trench Coat</div>
+          <h2>Stay in the loop.<br><em>No noise.</em></h2>
+          <p>Private drops, sale alerts, and styling notes — curated for you.</p>
         </div>
-        <div class="hero-tag-price">PKR 8,999</div>
-      </div>
-    </div>
-  </section>
-
-  <div class="banner">
-    <h2>New drop — <em>The Quiet Luxe</em> edit is live.</h2>
-    <p>Refined basics and statement layers, designed in Karachi.</p>
-    <a href="#shop" class="btn btn-dark-outline">Explore the Edit →</a>
-  </div>
-
-  <section class="section" id="shop">
-    <div class="section-head">
-      <h2 class="section-title">All Pieces</h2>
-      <a href="#" class="section-link">View all →</a>
-    </div>
-
-    <div class="toolbar">
-      <div class="chips" id="chips">
-        <button class="chip active" data-cat="all">All</button>
-        <button class="chip" data-cat="women">Women</button>
-        <button class="chip" data-cat="men">Men</button>
-        <button class="chip" data-cat="accessories">Accessories</button>
-      </div>
-      <div class="toolbar-right">
-        <div class="search-wrap">
-          <input id="searchInput" type="search" placeholder="Search…" aria-label="Search"/>
-          <button id="searchBtn">Go</button>
+        <div>
+          <form class="newsletter-form" id="nlForm">
+            <input type="email" id="nlEmail" placeholder="your@email.com" required aria-label="Email address"/>
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+          </form>
         </div>
-        <select id="sortSel" aria-label="Sort products">
-          <option value="featured">Featured</option>
-          <option value="price-asc">Price ↑</option>
-          <option value="price-desc">Price ↓</option>
-          <option value="new">Newest</option>
-        </select>
       </div>
-    </div>
+    </section>
 
-    <div class="grid" id="grid"></div>
-  </section>
-
-  <section class="section">
-    <div class="newsletter">
-      <div>
-        <h2>Stay in the loop.<br><em>No noise.</em></h2>
-        <p>Private drops, sale alerts, and styling notes — curated for you.</p>
+    <section id="about" class="about-section">
+      <div class="about-inner">
+        <div class="hero-eyebrow">Our Story</div>
+        <h2 class="section-title about-title">Made in Karachi.<br>Worn everywhere.</h2>
+        <p class="about-body">MQ Collective is an independent brand designing small-batch, ethically made garments. Our fabrics are OEKO-TEX® certified and all packaging is 100% recyclable. We believe in slow fashion — pieces worth keeping.</p>
       </div>
-      <div>
-        <form class="newsletter-form" id="nlForm">
-          <input type="email" id="nlEmail" placeholder="your@email.com" required aria-label="Email address"/>
-          <button type="submit" class="btn btn-dark">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="max-width:1200px;margin:0 auto;padding:0 24px 80px">
-    <div style="max-width:600px">
-      <div class="hero-eyebrow">Our Story</div>
-      <h2 class="section-title" style="font-size:2rem;margin-bottom:16px">Made in Karachi.<br>Worn everywhere.</h2>
-      <p style="color:var(--text-muted);font-size:1.05rem;line-height:1.8">MQ Collective is an independent brand designing small-batch, ethically made garments. Our fabrics are OEKO-TEX® certified and all packaging is 100% recyclable. We believe in slow fashion — pieces worth keeping.</p>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div class="foot-grid">
@@ -153,7 +156,7 @@
       </div>
       <div>
         <h4>Help</h4>
-        <a href="#">Shipping & Returns</a>
+        <a href="#">Shipping &amp; Returns</a>
         <a href="#">Size Guide</a>
         <a href="#">Contact</a>
       </div>
@@ -170,10 +173,10 @@
     </div>
   </footer>
 
-  <aside class="cart-drawer" id="cartDrawer">
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
     <div class="cart-header">
       <h3>Your Cart</h3>
-      <button class="icon-btn-close" id="cartClose" aria-label="Close">✕</button>
+      <button class="icon-btn-close" id="cartClose" aria-label="Close cart">✕</button>
     </div>
     <div class="cart-body" id="cartBody"></div>
     <div class="cart-footer">
@@ -181,10 +184,24 @@
         <span>Subtotal</span>
         <span class="cart-total-price" id="cartTotal">PKR 0</span>
       </div>
-      <button class="btn btn-dark" style="width:100%;justify-content:center">Checkout →</button>
+      <button class="btn btn-dark" id="checkoutBtn" style="width:100%;justify-content:center">Checkout →</button>
       <p style="color:var(--text-muted);font-size:.82rem;margin-top:10px;text-align:center">Shipping calculated at checkout.</p>
     </div>
   </aside>
+
+  <!-- Mobile sticky bottom CTA bar -->
+  <div class="mobile-cta-bar" id="mobileCta" aria-label="Quick cart access">
+    <div class="mobile-cta-info">
+      <span class="mobile-cta-label">Your Cart</span>
+      <span class="mobile-cta-count" id="mobileCtaCount">0 items</span>
+    </div>
+    <button class="mobile-cta-btn" id="mobileCtaBtn">
+      View Cart →
+    </button>
+  </div>
+
+  <!-- Toast notification container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="false"></div>
 
   <script src="script.js" defer></script>
 </body>
